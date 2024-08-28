@@ -1,6 +1,6 @@
 package kodlamaio.northwind.api;
 
-import kodlamaio.northwind.business.concrete.ProductService;
+import kodlamaio.northwind.business.abstracts.IProductService;
 import kodlamaio.northwind.entities.concrete.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("api/products")
 public class ProductsController {
 
-    private ProductService productService;
+    private IProductService productService;
 
     @Autowired
-    public ProductsController(ProductService productService) {
+    public ProductsController(IProductService productService) {
         this.productService = productService;
     }
 
