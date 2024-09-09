@@ -2,7 +2,6 @@ package kodlamaio.northwind.api;
 
 import kodlamaio.northwind.business.abstracts.IProductService;
 import kodlamaio.northwind.core.utilities.result.DataResult;
-import kodlamaio.northwind.core.utilities.result.Result;
 import kodlamaio.northwind.entities.concrete.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

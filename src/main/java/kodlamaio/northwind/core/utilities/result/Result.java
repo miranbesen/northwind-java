@@ -1,6 +1,5 @@
 package kodlamaio.northwind.core.utilities.result;
 
-import lombok.AllArgsConstructor;
 
 
 public class Result {
