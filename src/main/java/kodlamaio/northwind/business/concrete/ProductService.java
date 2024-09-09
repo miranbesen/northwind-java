@@ -1,6 +1,10 @@
 package kodlamaio.northwind.business.concrete;
 
 import kodlamaio.northwind.business.abstracts.IProductService;
+import kodlamaio.northwind.core.utilities.result.DataResult;
+import kodlamaio.northwind.core.utilities.result.Result;
+import kodlamaio.northwind.core.utilities.result.SuccessDataResult;
+import kodlamaio.northwind.core.utilities.result.SuccessResult;
 import kodlamaio.northwind.dataAccess.abstracts.ProductDao;
 import kodlamaio.northwind.entities.concrete.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +24,13 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getAll() {
-        return this.productDao.findAll();
+    public DataResult<List<Product>> getAll() {
+        return new SuccessDataResult<>(this.productDao.findAll(), "Data listelendi");
+    }
+
+    @Override
+    public Result add(Product product) {
+        this.productDao.save(product);
+        return new SuccessResult("ürün eklendi");
     }
 }

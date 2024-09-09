@@ -1,9 +1,12 @@
 package kodlamaio.northwind.api;
 
 import kodlamaio.northwind.business.abstracts.IProductService;
+import kodlamaio.northwind.core.utilities.result.DataResult;
+import kodlamaio.northwind.core.utilities.result.Result;
 import kodlamaio.northwind.entities.concrete.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +23,14 @@ public class ProductsController {
         this.productService = productService;
     }
 
+
     @GetMapping("/getAll")
-    public List<Product> getAll() {
+    public DataResult<List<Product>> getAll() {
         return this.productService.getAll();
+    }
+
+    @PostMapping("/add")
+    public Result add(Product product ) {
+        return this.productService.add(product);
     }
 }
