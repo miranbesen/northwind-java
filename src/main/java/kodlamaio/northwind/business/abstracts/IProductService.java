@@ -12,6 +12,7 @@ public interface IProductService {
     DataResult<List<Product>> getAll();
 
     DataResult<List<Product>> getAll(int pageNo,int pageSize);
+    DataResult<List<Product>> getAllSorted();
 
     DataResult<Product> getByProductName(String productName);
 
