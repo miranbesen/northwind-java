@@ -3,6 +3,7 @@ package kodlamaio.northwind.api;
 import kodlamaio.northwind.business.abstracts.IProductService;
 import kodlamaio.northwind.core.utilities.result.DataResult;
 import kodlamaio.northwind.entities.concrete.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,5 +49,9 @@ public class ProductsController {
     @GetMapping("getAllDesc")
     public DataResult<List<Product>> getAllSorted() {
         return this.productService.getAllSorted();
+    }
+    @GetMapping("getProductWithCategoryDetails")
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+        return this.productService.getProductWithCategoryDetails();
     }
 }
