@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ProductDao extends JpaRepository<Product, Integer> {
+public interface IProductDao extends JpaRepository<Product, Integer> {
 
     Product getByProductName(String productName);
 

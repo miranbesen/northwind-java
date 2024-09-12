@@ -5,7 +5,7 @@ import kodlamaio.northwind.core.utilities.result.DataResult;
 import kodlamaio.northwind.core.utilities.result.Result;
 import kodlamaio.northwind.core.utilities.result.SuccessDataResult;
 import kodlamaio.northwind.core.utilities.result.SuccessResult;
-import kodlamaio.northwind.dataAccess.abstracts.ProductDao;
+import kodlamaio.northwind.dataAccess.abstracts.IProductDao;
 import kodlamaio.northwind.entities.concrete.Product;
 import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +20,10 @@ import java.util.List;
 public class ProductService implements IProductService {
 
 
-    private ProductDao productDao;
+    private IProductDao productDao;
 
     @Autowired
-    public ProductService(ProductDao productDao) {
+    public ProductService(IProductDao productDao) {
         this.productDao = productDao;
     }
 
