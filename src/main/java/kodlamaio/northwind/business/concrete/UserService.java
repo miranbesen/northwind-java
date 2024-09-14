@@ -8,7 +8,9 @@ import kodlamaio.northwind.core.utilities.result.Result;
 import kodlamaio.northwind.core.utilities.result.SuccessDataResult;
 import kodlamaio.northwind.core.utilities.result.SuccessResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService implements IUserService {
 
     private IUserDao userDao;
