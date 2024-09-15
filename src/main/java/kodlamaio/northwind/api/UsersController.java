@@ -10,14 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@RestController
+@RequestMapping(value="/api/users/")
 public class UsersController {
 
     private IUserService userService;
@@ -27,7 +26,7 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "add")
     public ResponseEntity<?> add(@Valid @RequestBody User user) {
         return ResponseEntity.ok(this.userService.add(user));
     }
